@@ -66,7 +66,6 @@ def backtrack_from_score_matrix(i: int, j: int, sequences: list, score_matrix: l
         return backtrack_from_score_matrix(i, j-1, sequences, score_matrix, cost_matrix, gapcost, alignment1, alignment2)
     return alignment1[::-1], alignment2[::-1] #The alignments were filled from back to front, so we must invert the string of each
 
-
 def global_linear(sequences: list, alphabet: list, cost_matrix: list, gap_cost: int, backtracking: bool = False):
     """
     Function to get the global pairwise alignment using linear gap cost
@@ -109,7 +108,6 @@ def write_alignment_in_fasta(alignment: list, filename: str):
     print(filename)
     with open(filename, "w") as f:
         f.writelines([">seq1\n", alignment[0]+'\n', "\n", ">seq2\n", alignment[1]+'\n'])
-
 
 tests_directory = 'tests/'
 filename = "test4.fasta"
