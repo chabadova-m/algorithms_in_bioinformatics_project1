@@ -101,7 +101,7 @@ def global_linear(sequences: list, alphabet: list, cost_matrix: list, gap_cost: 
 
 def write_alignment_in_fasta(alignment: list, filename: str):
     """
-    Function to wirte the output alignment in a fasta file. Recieves:
+    Function to write the output alignment in a fasta file. Receives:
         - alignment: A list with the two sequences already aligned
         - filename: the name of the file where we will write our output
     (I'm sure that there is a more elegant way of doing this, but I don't know if I want to look at it)
