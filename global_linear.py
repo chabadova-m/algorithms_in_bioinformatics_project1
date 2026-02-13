@@ -48,7 +48,19 @@ def check_sequences_validity(sequences, alphabet):
     for sequence in sequences:
         for i, site in enumerate(sequence):
             if site not in alphabet:
-                raise Exception(f"'{site}' of sequence {i} is not part of the defined alphabet {alphabet}")
+                raise Exception(f"'{site}' of sequence {i+1} is not part of the defined alphabet {alphabet}")
+                
+#I did the faster implementation if we want to use this one
+#def check_sequences_validity(sequences, alphabet):
+    """
+    Function to check the validity of all the sequences
+    Verify that they don't have characters outside of our alphabet   
+    """
+    alphabet_set = set(alphabet)
+    for i, sequence in enumerate(sequences):
+        invalid_chars = set(sequence) - alphabet_set
+        if invalid_chars:
+            raise Exception(f"Sequence {i+1} contains invalid characters: {invalid_chars}")
 
 def backtrack_from_score_matrix(i: int, j: int, sequences: list, score_matrix: list, cost_matrix: list, gapcost: int, alignment1: str = '', alignment2: str = ''):
     #print(i,j)
